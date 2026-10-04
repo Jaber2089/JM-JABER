@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JM JABER — Three Piece & Electronics</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f7f7f8;color:#171717}
+header{background:#111;color:#fff;padding:18px 16px;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:25px;font-weight:800;letter-spacing:1px}.nav a{color:#fff;text-decoration:none;margin-left:12px;font-size:14px}
+.hero{background:linear-gradient(135deg,#111,#3b3b3b);color:white;padding:65px 18px;text-align:center}
+.hero h1{font-size:44px;margin:0 0 10px}.hero p{font-size:18px;margin:8px auto 22px;max-width:650px}
+.btn{display:inline-block;background:#fff;color:#111;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
+section{max-width:1100px;margin:auto;padding:42px 16px}h2{text-align:center;margin-top:0;font-size:30px}
+.categories{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.filter{border:1px solid #ddd;background:white;border-radius:20px;padding:9px 15px;cursor:pointer}.filter.active{background:#111;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 15px #00000012;border:1px solid #eee}
+.pic{height:210px;background:#e9e9eb;display:flex;align-items:center;justify-content:center;color:#777;font-size:14px}
+.card-body{padding:16px}.card h3{margin:0 0 7px}.price{font-weight:800;font-size:19px;margin:8px 0 13px}
+.order{display:block;text-align:center;background:#111;color:white;padding:10px;border-radius:8px;text-decoration:none}
+.about{background:#fff;border-radius:14px;padding:24px;line-height:1.8}
+.contact{text-align:center;background:#111;color:#fff;border-radius:14px;padding:32px}
+.contact a{color:#fff;text-decoration:none;font-weight:700}
+footer{text-align:center;background:#111;color:#aaa;padding:22px;font-size:13px}
+@media(max-width:600px){.hero h1{font-size:34px}.nav a{display:none}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">JM JABER</div><div><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></header>
+
+<div class="hero">
+<h1>JM JABER</h1>
+<p>Three Piece & Electronics — আপনার পছন্দের পণ্য, সহজে অর্ডার করুন।</p>
+<a class="btn" href="#products">পণ্য দেখুন</a>
+</div>
+
+<section id="products">
+<h2>আমাদের পণ্য</h2>
+<div class="categories">
+<button class="filter active" onclick="filterProducts('all',this)">সব</button>
+<button class="filter" onclick="filterProducts('dress',this)">থ্রি-পিস</button>
+<button class="filter" onclick="filterProducts('electronics',this)">ইলেকট্রনিক্স</button>
+</div>
+<div class="grid" id="productGrid"></div>
+</section>
+
+<section id="about">
+<h2>JM JABER সম্পর্কে</h2>
+<div class="about">
+JM JABER একটি অনলাইন ব্যবসায়িক প্ল্যাটফর্ম। এখানে থ্রি-পিস ও নির্বাচিত ইলেকট্রনিক্স পণ্য পাওয়া যাবে। পণ্যের ছবি, নাম ও দাম পরিবর্তন করে সহজেই এই ওয়েবসাইট আপডেট করা যাবে।
+</div>
+</section>
+
+<section id="contact">
+<div class="contact">
+<h2>অর্ডার করতে যোগাযোগ করুন</h2>
+<p>WhatsApp: <a href="https://wa.me/8801798206208">01798206208</a></p>
+<p>পণ্যের নাম লিখে WhatsApp-এ মেসেজ করুন।</p>
+</div>
+</section>
+
+<footer>© 2026 JM JABER — All Rights Reserved</footer>
+
+<script>
+const products=[
+{name:"Elegant Three Piece",cat:"dress",price:"৳ 1,850",img:"images/three-piece-1.jpg"},
+{name:"Premium Three Piece",cat:"dress",price:"৳ 2,250",img:"images/three-piece-2.jpg"},
+{name:"Stylish Three Piece",cat:"dress",price:"৳ 1,650",img:"images/three-piece-3.jpg"},
+{name:"Smart Electronics",cat:"electronics",price:"৳ 1,200",img:"images/electronics-1.jpg"},
+{name:"Wireless Gadget",cat:"electronics",price:"৳ 950",img:"images/electronics-2.jpg"},
+{name:"Home Electronics",cat:"electronics",price:"৳ 1,500",img:"images/electronics-3.jpg"}
+];
+function card(p){
+return `<div class="card product" data-cat="${p.cat}">
+<div class="pic"><span>${p.img.split('/').pop()}<br>ছবি এখানে বসবে</span></div>
+<div class="card-body"><h3>${p.name}</h3><div class="price">${p.price}</div>
+<a class="order" href="https://wa.me/8801798206208?text=${encodeURIComponent('আমি '+p.name+' অর্ডার করতে চাই।')}">WhatsApp-এ অর্ডার</a></div></div>`;
+}
+function render(){document.getElementById('productGrid').innerHTML=products.map(card).join('')}
+function filterProducts(cat,btn){
+document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+document.querySelectorAll('.product').forEach(x=>x.style.display=(cat==='all'||x.dataset.cat===cat)?'block':'none')
+}
+render();
+</script>
+</body>
+</html>
