@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JM JABER | Fashion & Electronics</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+}
+
+body{
+  background:#f6f7fb;
+  color:#222;
+}
+
+/* Header */
+header{
+  background:linear-gradient(135deg,#111827,#4c1d95);
+  color:white;
+  padding:18px 15px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.cart{
+  background:#fff;
+  color:#4c1d95;
+  padding:9px 13px;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+/* Hero */
+.hero{
+  background:linear-gradient(135deg,#4c1d95,#7c3aed,#db2777);
+  color:white;
+  padding:55px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:17px;
+  margin-bottom:25px;
+}
+
+.hero-btn{
+  display:inline-block;
+  background:white;
+  color:#4c1d95;
+  padding:13px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Categories */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 15px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:27px;
+  margin-bottom:25px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.category{
+  padding:25px 15px;
+  border-radius:18px;
+  color:white;
+  text-align:center;
+  font-size:19px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.fashion{
+  background:linear-gradient(135deg,#ec4899,#be185d);
+}
+
+.electronics{
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+}
+
+/* Products */
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.product{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,.09);
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+}
+
+.product-img{
+  width:100%;
+  height:170px;
+  background:#eee;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:50px;
+}
+
+.product-info{
+  padding:15px;
+}
+
+.product h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.price{
+  color:#7c3aed;
+  font-size:19px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.order{
+  display:block;
+  text-align:center;
+  background:#16a34a;
+  color:white;
+  padding:10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Search */
+.search{
+  width:100%;
+  padding:14px 18px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  outline:none;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+/* About */
+.about{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  line-height:1.8;
+  box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+/* Footer */
+footer{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+}
+
+footer h2{
+  margin-bottom:10px;
+}
+
+footer p{
+  margin:7px 0;
+}
+
+.whatsapp{
+  display:inline-block;
+  background:#16a34a;
+  color:white;
+  padding:12px 22px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:12px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .hero h1{
+    font-size:31px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-img{
+    height:135px;
+  }
+}
+
+@media(min-width:800px){
+  .products{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">JM JABER</div>
+    <div class="cart">🛍️ Online Shop</div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>JM JABER</h1>
+  <p>ফ্যাশন ও ইলেকট্রনিক্সের বিশ্বস্ত অনলাইন শপ</p>
+  <a href="#products" class="hero-btn">🛒 পণ্য দেখুন</a>
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">ক্যাটাগরি</h2>
+
+  <div class="categories">
+    <div class="category fashion">
+      👗<br>
+      থ্রি-পিস
+    </div>
+
+    <div class="category electronics">
+      📱<br>
+      ইলেকট্রনিক্স
+    </div>
+  </div>
+
+</section>
+
+<section class="section" id="products">
+
+  <h2 class="section-title">আমাদের পণ্য</h2>
+
+  <input
+    type="text"
+    class="search"
+    id="search"
+    placeholder="🔎 পণ্য খুঁজুন..."
+    onkeyup="searchProducts()"
+  >
+
+  <div class="products" id="productList">
+
+    <div class="product">
+      <div class="product-img">👗</div>
+      <div class="product-info">
+        <h3>প্রিমিয়াম থ্রি-পিস</h3>
+        <div class="price">৳ ১,৫০০</div>
+        <a class="order" href="https://wa.me/8801798206208?text=আমি%20প্রিমিয়াম%20থ্রি-পিস%20অর্ডার%20করতে%20চাই">
+          WhatsApp Order
+        </a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img">👚</div>
+      <div class="product-info">
+        <h3>ডিজাইনার থ্রি-পিস</h3>
+        <div class="price">৳ ১,৮০০</div>
+        <a class="order" href="https://wa.me/8801798206208?text=আমি%20ডিজাইনার%20থ্রি-পিস%20অর্ডার%20করতে%20চাই">
+          WhatsApp Order
+        </a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img">🎧</div>
+      <div class="product-info">
+        <h3>Wireless Earbuds</h3>
+        <div class="price">৳ ৮৫০</div>
+        <a class="order" href="https://wa.me/8801798206208?text=আমি%20Wireless%20Earbuds%20অর্ডার%20করতে%20চাই">
+          WhatsApp Order
+        </a>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img">⌚</div>
+      <div class="product-info">
+        <h3>Smart Watch</h3>
+        <div class="price">৳ ১,২০০</div>
+        <a class="order" href="https://wa.me/8801798206208?text=আমি%20Smart%20Watch%20অর্ডার%20করতে%20চাই">
+          WhatsApp Order
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">JM JABER সম্পর্কে</h2>
+
+  <div class="about">
+    <p>
+      JM JABER একটি অনলাইন শপ যেখানে আপনি
+      সুন্দর থ্রি-পিস এবং প্রয়োজনীয় ইলেকট্রনিক্স
+      পণ্য সহজে অর্ডার করতে পারবেন।
+    </p>
+
+    <p>
+      আপনার পছন্দের পণ্য নির্বাচন করে
+      সরাসরি WhatsApp-এর মাধ্যমে অর্ডার করুন।
+    </p>
+  </div>
+
+</section>
+
+<footer>
+
+  <h2>JM JABER</h2>
+
+  <p>Fashion & Electronics</p>
+
+  <p>📞 WhatsApp: 01798206208</p>
+
+  <a class="whatsapp"
+     href="https://wa.me/8801798206208?text=আসসালামু%20আলাইকুম,%20JM%20JABER%20থেকে%20পণ্য%20সম্পর্কে%20জানতে%20চাই">
+     💬 WhatsApp যোগাযোগ
+  </a>
+
+  <p style="margin-top:20px;font-size:13px;">
+    © 2026 JM JABER. All Rights Reserved.
+  </p>
+
+</footer>
+
+<script>
+
+function searchProducts(){
+
+  let input =
+    document.getElementById("search").value.toLowerCase();
+
+  let products =
+    document.querySelectorAll(".product");
+
+  products.forEach(function(product){
+
+    let name =
+      product.innerText.toLowerCase();
+
+    if(name.includes(input)){
+      product.style.display = "";
+    }else{
+      product.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
